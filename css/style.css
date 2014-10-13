@@ -1,0 +1,44 @@
+body{
+	background-image: url('../images/body.jpg');
+	margin: 0;
+}
+.menu li{
+	float: left;
+	font-size: 25px;
+	padding: 10px;
+	list-style: none;
+	text-align: center;
+	
+}
+.menu a{
+	text-decoration: none;
+	color: white;
+}
+.boder{
+	border-top: 2px solid white;
+	display: inline-block;
+	width: 90%;
+	margin-left: 50px;
+}
+.menu a:hover{
+	color: gold;
+}
+.col1{
+	float: left;
+	width: 65%;
+}
+.col2{
+	width: 25%;
+	border-left: 2px solid white;
+}
+.add{
+	padding: 50px;
+	color: white;
+	text-align: center;
+}
+.add1{
+	width: 50%;
+	height: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
