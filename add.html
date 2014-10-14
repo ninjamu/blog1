@@ -7,7 +7,7 @@
 <body>
 	<div class="add">
 	<div class="add1">
-	<form name="formadd" action="add.html" method="POST" onsubmit="return check()">
+	<form name="formadd" action="adduser.php" method="POST" onsubmit="return check()">
 	<table>
 		<tr><td>Username : </td><td><input type="text" name="username" size="25"/></td></tr>
 		<tr><td>Password : </td><td><input type="text" name="password" size="25"/></br></td></tr>
@@ -23,27 +23,6 @@
 		<input type="reset" name="resetsub"  value="Clear" size="25"/></td></tr>
 	</table>
 	</form>
-	<?php
-	require_once("connect.php");
-	$u=$_POST['username'];
-	$p=$_POST['password'];
-	$e=$_POST['email'];
-	$ln=$_POST['lastname'];
-	$fn=$_POST['firstname'];
-	$rl=$_POST['role'];
-	$sql = "select * from user where username='".$u."'";
-	$query=mysql_query($sql);
-	if(mysql_num_rows($query) !="")
-	{
-		echo "Username exist";
-	}
-	else
-	{
-		$sql="insert into user(id,username,password,email,firstname,lastname,role) values('""','".$u."','".$p."','".$e."','".$ln."','".$fn."','".$rl."')";
-		$query2 =mysql_query($sql);
-		echo "add successful";
-	}
-	?>
 	<script type="text/javascript" language="javascript">
 	function check(){
 		if (document.formadd.username.value=="") {
