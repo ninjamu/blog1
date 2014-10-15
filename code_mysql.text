@@ -1,0 +1,32 @@
+Create database blog
+use blog
+create table `comment`(
+`idcomment` int not null auto_increment primary key,
+`userid` int,
+`postid` int,
+`content` longtext not null,
+`dateofcomment` date
+)
+create table `post`(
+`idpost` int not null auto_increment primary key,
+`title` text not null,
+`content` longtext not null,
+`userid` int,
+`dateofpost` date,
+`image` text
+)
+create table `role`(
+`idrole` int not null auto_increment primary key,
+`rolename` varchar(50) not null
+)
+create table `user`(
+`iduser` int not null auto_increment primary key,
+`username` varchar(50) not null,
+`password` varchar(50) not null,
+`email` varchar(50) not null,
+`firstname` varchar(50) not null,
+`lastname` varchar(50) not null,
+`idrole` int
+)
+INSERT INTO `blog1`.`role` (`idrole`, `rolename`) VALUES ('1', 'Admin');
+INSERT INTO `blog1`.`role` (`idrole`, `rolename`) VALUES ('2', 'Member');
