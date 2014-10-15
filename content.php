@@ -13,17 +13,8 @@
 				<li><a href="#">Contact</a></li>
 				<li><a href="add.html">Add User</a></li>
 				<li><a href="addpost.html">Add Post</a></li>
-				<?php 
-				session_start();
-				if(!$_SESSION['username']) 
-				{
-					printf("<li><a href='login.html'>Login</a></li>");		
-				}
-				else
-				{
-					printf("<li><a href='#'>Username : %s   ,Role : %s</a></li><li><a href='logout.php'>Logout</a></li>",$_SESSION['username'],$_SESSION['rolename']);
-				}
-				?>
+				<li><a href="login.php">Login</a></li>
+				<li><a href="#"><?php session_start(); printf("Username : %s--Role : %s",$_SESSION['username'],$_SESSION['rolename']);?></a></li>
 			</ul>
 		</div>
 		<div class="boder"></div>
@@ -32,10 +23,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col1">
-				<?php require_once('function.php');
-					$index = new createnew;
-					echo $index->selectpost();
-				?>
+				
 				</div>
 				<div class="col2" style="float:right;">
 				<?php require_once('function.php');

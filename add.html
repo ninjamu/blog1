@@ -5,9 +5,21 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+<header>
+		<div class="menu">
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="add.html">Add User</a></li>
+				<li><a href="addpost.html">Add Post</a></li>
+			</ul>
+		</div>
+		<div class="boder"></div>
+	</header>
 	<div class="add">
 	<div class="add1">
-	<form name="formadd" action="adduser.php" method="POST" onsubmit="return check()">
+	<form name="formadd" action="adduser.php" method="POST" onsubmit="return checkadduser()">
 	<table>
 		<tr><td>Username : </td><td><input type="text" name="username" size="25"/></td></tr>
 		<tr><td>Password : </td><td><input type="text" name="password" size="25"/></br></td></tr>
@@ -22,54 +34,8 @@
 		<tr><td></td><td><input type="submit" name="addsubmit" onclick="return checkmail(this.form.email)" value="Add" size="25"/>
 		<input type="reset" name="resetsub"  value="Clear" size="25"/></td></tr>
 	</table>
-	</form>
-	<script type="text/javascript" language="javascript">
-	function check(){
-		if (document.formadd.username.value=="") {
-			alert('username not null');
-			document.formadd.username.focus();
-			return false;
-		};
-		if (document.formadd.password.value=="") {
-			alert('password not null');
-			document.formadd.password.focus();
-			return false;
-		};
-		if (document.formadd.repassword.value != document.formadd.password.value)
-		{
-			alert('re-password not same');
-			document.formadd.repassword.focus();
-			return false;
-		}
-		if (document.formadd.email.value=="") {
-			alert('mail not null');
-			document.formadd.email.focus();
-			return false;
-		}
-		if (document.formadd.firstname.value=="") {
-			alert('first name not null');
-			document.formadd.firstname.focus();
-			return false;
-		}
-		if (document.formadd.lastname.value=="") {
-			alert('last name not null');
-			document.formadd.lastname.focus();
-			return false;
-		}
-		return true;
-	}
-	</script>
-	<script type="text/javascript" language="javascript">
-	function checkmail(e){
-		var loi = /^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i;
-		var kt=loi.test(e.value);
-		if (kt==false) {
-			alert('Mail Invalid');
-			e.select();
-		};
-		return kt;
-	}
-	</script>
+	<script type="text/javascript" src="js/java.js"></script>
+	</form>	
 	</div>
 	</div>
 </body>

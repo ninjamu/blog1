@@ -3,7 +3,7 @@
 	$date = date('d.m.Y');
 	$title = mysql_real_escape_string($_POST['tittle']);
 	$userid = 1;
-	$images=mysql_real_escape_string($_POST['images']);
+	$images=mysql_real_escape_string($_POST['imagess']);
 	$content= mysql_real_escape_string($_POST['contentt']);
 	$sql = "INSERT INTO `blog`.`post` (`title`, `content`, `userid`, `dateofpost`, `image`) VALUES ('".$title."','".$content."','".$userid."','".$date."','".$images."')";
 	$query=mysql_query($sql);

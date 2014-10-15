@@ -25,14 +25,14 @@ body{
 }
 .col1{
 	float: left;
-	width: 60%;
-	margin-left: auto;
-	margin-right: auto;
+	width: 65%;
 }
 
 .col2{
+	float: right;
 	width: 25%;
 	border-left: 2px solid white;
+	text-decoration: none;
 }
 .add{
 	padding: 50px;
