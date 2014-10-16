@@ -11,18 +11,10 @@
 				<li><a href="index.php">Home</a></li>
 				<li><a href="#">About Us</a></li>
 				<li><a href="#">Contact</a></li>
-				<li><a href="add.html">Add User</a></li>
-				<li><a href="addpost.html">Add Post</a></li>
 				<?php 
-				session_start();
-				if(!$_SESSION['username']) 
-				{
-					printf("<li><a href='login.html'>Login</a></li>");		
-				}
-				else
-				{
-					printf("<li><a href='#'>Username : %s   ,Role : %s</a></li><li><a href='logout.php'>Logout</a></li>",$_SESSION['username'],$_SESSION['rolename']);
-				}
+				require_once('function.php');
+				$menu = new createnew();
+				echo $menu->sessionstar();
 				?>
 			</ul>
 		</div>

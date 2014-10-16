@@ -11,10 +11,11 @@
 				<li><a href="index.php">Home</a></li>
 				<li><a href="#">About Us</a></li>
 				<li><a href="#">Contact</a></li>
-				<li><a href="add.html">Add User</a></li>
-				<li><a href="addpost.html">Add Post</a></li>
-				<li><a href="login.php">Login</a></li>
-				<li><a href="#"><?php session_start(); printf("Username : %s--Role : %s",$_SESSION['username'],$_SESSION['rolename']);?></a></li>
+				<?php 
+				require_once('function.php');
+				$menu = new createnew;
+				echo $menu->sessionstar();
+				?>
 			</ul>
 		</div>
 		<div class="boder"></div>
@@ -23,7 +24,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col1">
-				
+				<?php require_once('function.php');
+				$content=new createnew;
+				echo $content->content();
+				?>
 				</div>
 				<div class="col2" style="float:right;">
 				<?php require_once('function.php');

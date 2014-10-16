@@ -59,3 +59,17 @@ function checkpost(){
 		}
 		return true;
 	}
+function checklogin(){
+	if (document.formadd.username.value=""){
+		alert('username not null');
+		document.formadd.password.focus();
+		return false;
+	};
+	if(document.formadd.password.value=""){
+		alert('password not null');
+		document.formadd.password.focus();
+		return false;
+	}
+	return true;
+	}
+}

@@ -6,7 +6,7 @@
 	$e=$_POST['email'];
 	$ln=$_POST['lastname'];
 	$fn=$_POST['firstname'];
-	$rl=$_POST['role'];
+	$rl=2;
 	$sql = "select * from user where username='".$u."'";
 	$query=mysql_query($sql);
 	if(mysql_num_rows($query) >0)

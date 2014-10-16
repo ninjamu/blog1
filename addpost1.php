@@ -34,8 +34,8 @@
 		<input type='reset' name='resetsub'  value='Clear' size='25'/></td></tr>
 	</table>
 	</form>
-	<script type='text/javascript'>";
-	echo "function checkpost(){
+	<script type='text/javascript'>
+	function checkpost(){
 		if (document.formadd.tittle.value=='') {
 			alert('title not null');
 			document.formadd.tittle.focus();
@@ -54,6 +54,7 @@
 		return true;
 	}
 	</script>";
+	?>
 	</div>
 	</div>
 </body>

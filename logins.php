@@ -6,8 +6,7 @@
 	$query=mysql_query($sql);
 	if(mysql_num_rows($query)==0)
 	{
-		echo('username or password not true');
-		include('login.html');
+		echo "Username or Password not true <a href='login.php'>back</a>";
 	}
 	else
 	{
