@@ -24,10 +24,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col1">
-				<?php require_once('function.php');
-					$index = new createnew;
-					echo $index->selectpost();
-				?>
+				<h1>ABOUT US </h1>
 				</div>
 				<div class="col2" style="float:right;">
 				<?php require_once('function.php');

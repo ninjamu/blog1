@@ -41,8 +41,22 @@
 				echo "</div>";
 			}
 		};
+		$sql1 = "SELECT `comment`.`content`,`user`.`username`,`comment`.`dateofcomment` FROM `comment`,`post`,`user` WHERE `comment`.`postid`=`post`.`idpost` and `user`.`iduser`=`comment`.`userid` and `comment`.`postid`='".$tittle."'";
+		$query1 = mysql_query($sql1);
+		if(mysql_num_rows($query1)!=0)
+		{
+			printf("<div style='margin-left:100px;'>Comment : </br>");
+			while ($row1=mysql_fetch_array($query1)) {
+				printf("<table style='width=800px;padding:50px;border:1px solid' margin-left 100px;>
+					<tr><td style='color:gray;'>Username:</td><td width ='100px'>".$row1['username']."</td></tr>
+					<tr><td style='color:gray;'>Date Comment:</td><td width ='100px'>".$row1['dateofcomment']."</td></tr>
+					<tr><td>Comment:</td><td width ='450px'>".$row1['content']."</td></tr>
+					</table>");
+			}
+			printf("</div>");
+		}
 		if (isset($_SESSION['username'])) {
-			printf("<form>
+			printf("<form action='comment.php?id=".$tittle."' method='POST'>
 					<table style='width=800px;padding:50px;'>
 					<tr><td>Username:</td><td width ='100px'>".$_SESSION['username']."</td></tr>
 					<tr><td>Comment:</td><td width ='450px'><textarea style='width:700px;' name='comment' cols='10' rows='10' placeholder='write comment'></textarea></td></tr>

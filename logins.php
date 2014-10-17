@@ -13,6 +13,7 @@
 			$row=mysql_fetch_array($query);
 			session_start();
 			$_SESSION['username']=$row['username'];
+			$_SESSION['userid']=$row['iduser'];
 			$_SESSION['role']=$row['idrole'];
 			$_SESSION['rolename']=$row['rolename'];
 			printf("Your username is %s </br>",$_SESSION['username']);

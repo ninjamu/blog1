@@ -10,8 +10,8 @@
 		<div class="menu">
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="aboutus.php">About Us</a></li>
+				<li><a href="contact.php">Contact</a></li>
 				<?php 
 				require_once('function.php');
 				$menu = new createnew;
