@@ -70,7 +70,7 @@
 				if(isset($_SESSION['username'])) 
 				{
 					if($_SESSION['role']=='1'){
-						printf("<li><a href=addpost1.php>Add Post</a></li><li><a href=addad.php>Add User</a></li><li><a href=#>Username : %s Role : %s</a></li><li><a href=logout.php>Logout</a></li>",$_SESSION['username'],$_SESSION['rolename']);
+						printf("<li><a href=editpost.php>Edit Post</a></li><li><a href=addpost1.php>Add Post</a></li><li><a href=addad.php>Add User</a></li><li><a href=#>Username : %s Role : %s</a></li><li><a href=logout.php>Logout</a></li>",$_SESSION['username'],$_SESSION['rolename']);
 					}
 					else
 					{
@@ -81,6 +81,43 @@
 				{
 					printf("<li><a href=login.php>Login</a></li><li><a href=add.php>Registration</a></li>");
 				}
+	}
+	function postselect()
+	{
+		$sql = "SELECT * FROM `post`";
+		$query=mysql_query($sql);
+		if(mysql_num_rows($query)!=0)
+			{
+				while ($row=mysql_fetch_array($query)) {
+					echo "<option value='".$row['idpost']."'>";
+					echo $row['title']."</option>";
+				}
+				
+			}
+	}
+	function postselectid()
+	{
+		$edit = $_REQUEST['selectid'];
+		$sql= "SELECT * FROM `post` WHERE `idpost`='".$edit."'";
+		if(isset($_POST['editad']))
+		{
+			if($query=mysql_query($sql)){
+				while ($row=mysql_fetch_array($query)) {
+				echo "<tr style='text-align:center;'>";
+				echo "<td><select name='idpost'><option value='".$row['idpost']."'>".$row['idpost']."</option></select></td>";
+				echo "<td><input type='text' name='title' value='".$row['title']."'></td>";
+				echo "<td>".$row['userid']."</td>";
+				echo "<td>".$row['dateofpost']."</td>";
+				echo "<td><input type='file' name='image'></td>";
+				echo "</tr>";
+				echo "<tr>";
+				echo "<td colspan=5><textarea name='content' cols='10' rows='10' style='width:550px;'>".$row['content']."</textarea></td>";
+				echo "</tr>";
+				echo "<tr><td><input type='submit' name='editsub' value='Edit'></td><td><input type='reset' value='clear'></td></tr>";
+				}
+			
+			}
+		}
 	}
 	}
 ?>

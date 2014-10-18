@@ -25,13 +25,13 @@
 	<div class="add1">
 	<?php 
 	echo "<form name='formadd' action='addpost.php' method='POST' enctype='multipart/form-data'>
-	<table>
+	<table style='color:white'>
 		<tr><td>Title : </td><td><input type='text' name='tittle' size='25'/></td></tr>
 		<tr><td>Content : </td><td><textarea style='width:550px;' name='contentt' rows='20' cols='10'></textarea></td></tr>
 		<tr><td>Images : </td><td><input type='file' name='imagess' size='25'/></br>
 		</td></tr>
 		</select></br></td></tr>
-		<tr><td></td><td><input type='submit' name='addsubmit' onclick='return checkpost()'' value='Add' size='25'/>
+		<tr><td></td><td><input type='submit' name='addsubmit' onclick='return checkpost()' value='Add' size='25'/>
 		<input type='reset' name='resetsub'  value='Clear' size='25'/></td></tr>
 	</table>
 	</form>

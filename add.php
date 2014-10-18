@@ -24,7 +24,7 @@
 	<div class="add1">
 	<?php echo"
 	<form name='formadd' action='adduser.php' method='POST' onsubmit='return checkadduser()'>
-	<table>
+	<table style='color:white;'>
 		<tr><td>Username : </td><td><input type='text' name='username' size='25'/></td></tr>
 		<tr><td>Password : </td><td><input type='password' name=password size='25'/></br></td></tr>
 		<tr><td>Re-Password : </td><td><input type='password' name='repassword' size='25'/></br></td></tr>
