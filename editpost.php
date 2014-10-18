@@ -53,39 +53,6 @@
 						?>
 					</table>
 				</form>
-				<?php
-				echo "<script type='text/javascript'>";
-				echo "function checkpost(){
-				if (document.formedit.title.value=='') {
-					alert('title not null');
-					document.formedit.tittle.focus();
-					return false;
-				};
-				if (document.foredit.contentt.value=='') {
-					alert('conttentt not null');
-					document.formedit.conttentt.focus();
-					return false;
-				};
-				if (document.formedit.image.value==''){
-					alert('imagess not null');
-					document.formedit.image.focus();
-					return false;
-				}
-				var str=document.formedit.image.value;
-				var ext=str.substring(str.length,str.length-3);
-				if (ext != 'gif'){
-				if (ext != 'PNG'){
-				if (ext != 'jpg'){
-					alert('Upload file not images');
-					document.formedit.image.focus();
-					return false;
-						}
-					}
-				}
-				return true;
-				}";
-				echo "</script>";
-				?>
 				</div>
 				</div>
 				<div class="col2" style="float:right;">

@@ -14,7 +14,7 @@
 		else
 			{
 				mysql_error();
-				echo "Edit Error <a href='editpost.php'>Back</a>"
+				echo "Edit Error <a href='editpost.php'>Back</a>";
 			}
 	}
 ?>

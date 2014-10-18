@@ -114,6 +114,37 @@
 				echo "<td colspan=5><textarea name='content' cols='10' rows='10' style='width:550px;'>".$row['content']."</textarea></td>";
 				echo "</tr>";
 				echo "<tr><td><input type='submit' name='editsub' value='Edit'></td><td><input type='reset' value='clear'></td></tr>";
+				echo "<script type='text/javascript'>";
+				echo "function checkpost(){
+				if (document.formedit.title.value=='') {
+					alert('title not null');
+					document.formedit.tittle.focus();
+					return false;
+				};
+				if (document.foredit.contentt.value=='') {
+					alert('conttentt not null');
+					document.formedit.conttentt.focus();
+					return false;
+				};
+				if (document.formedit.image.value==''){
+					alert('imagess not null');
+					document.formedit.image.focus();
+					return false;
+				}
+				var str=document.formedit.image.value;
+				var ext=str.substring(str.length,str.length-3);
+				if (ext != 'gif'){
+				if (ext != 'PNG'){
+				if (ext != 'jpg'){
+					alert('Upload file not images');
+					document.formedit.image.focus();
+					return false;
+						}
+					}
+				}
+				return true;
+				}";
+				echo "</script>";
 				}
 			
 			}

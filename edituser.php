@@ -60,30 +60,34 @@
 				echo "<script type='text/javascript'>";
 				echo "function checkpost(){
 				if (document.formedit.username.value=='') {
-					alert('title not null');
-					document.formedit.tittle.focus();
+					alert('username not null');
+					document.formedit.username.focus();
 					return false;
 				};
-				if (document.foredit.contentt.value=='') {
-					alert('conttentt not null');
-					document.formedit.conttentt.focus();
+				if (document.foredit.pasword.value=='') {
+					alert('password not null');
+					document.formedit.password.focus();
 					return false;
 				};
-				if (document.formedit.image.value==''){
-					alert('imagess not null');
-					document.formedit.image.focus();
+				if (document.formedit.email.value==''){
+					alert('email not null');
+					document.formedit.email.focus();
 					return false;
 				}
-				var str=document.formedit.image.value;
-				var ext=str.substring(str.length,str.length-3);
-				if (ext != 'gif'){
-				if (ext != 'PNG'){
-				if (ext != 'jpg'){
-					alert('Upload file not images');
-					document.formedit.image.focus();
+				if (document.formedit.firstname.value==''){
+					alert('firstname not null');
+					document.formedit.firstname.focus();
 					return false;
-						}
-					}
+				}
+				if (document.formedit.lastname.value==''){
+					alert('lastname not null');
+					document.formedit.lastname.focus();
+					return false;
+				}
+				if (document.formedit.idrole.value==''){
+					alert('idrole not null');
+					document.formedit.idrole.focus();
+					return false;
 				}
 				return true;
 				}";
