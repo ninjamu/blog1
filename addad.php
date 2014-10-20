@@ -23,7 +23,7 @@
 	<div class="add">
 	<div class="add1">
 	<?php echo"
-	<form name='formadd' action='adduser.php' method='POST' onsubmit='return checkadduser()'>
+	<form name='formadd' action='adduserad.php' method='POST' onsubmit='return checkadduser()'>
 	<table style='color:white;'>
 		<tr><td>Username : </td><td><input type='text' name='username' size='25'/></td></tr>
 		<tr><td>Password : </td><td><input type='text' name=password size='25'/></br></td></tr>

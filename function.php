@@ -70,7 +70,7 @@
 				if(isset($_SESSION['username'])) 
 				{
 					if($_SESSION['role']=='1'){
-						printf("<li><a href=edituser.php>Edit User</a></li><li><a href=editpost.php>Edit Post</a></li><li><a href=addpost1.php>Add Post</a></li><li><a href=addad.php>Add User</a></li><li><a href=#>Username : %s Role : %s</a></li><li><a href=logout.php>Logout</a></li>",$_SESSION['username'],$_SESSION['rolename']);
+						printf("<li><a href=deleteuser.php>Delete User</a></li><li><a href=delete.php>Delete Post</a></li><li><a href=edituser.php>Edit User</a></li><li><a href=editpost.php>Edit Post</a></li><li><a href=addpost1.php>Add Post</a></li><li><a href=addad.php>Add User</a></li><li><a href=#>Username : %s Role : %s</a></li><li><a href=logout.php>Logout</a></li>",$_SESSION['username'],$_SESSION['rolename']);
 					}
 					else
 					{
@@ -150,6 +150,61 @@
 			}
 		}
 	}
+	function deleteselected()
+	{
+		$edit = $_REQUEST['selectid'];
+		$sql= "SELECT * FROM `post` WHERE `idpost`='".$edit."'";
+		if(isset($_POST['editad']))
+		{
+			if($query=mysql_query($sql)){
+				while ($row=mysql_fetch_array($query)) {
+				echo "<tr style='text-align:center;'>";
+				echo "<td><select name='idpost'><option value='".$row['idpost']."'>".$row['idpost']."</option></select></td>";
+				echo "<td><input type='text' name='title' value='".$row['title']."'></td>";
+				echo "<td>".$row['userid']."</td>";
+				echo "<td>".$row['dateofpost']."</td>";
+				echo "<td><input type='file' name='image'></td>";
+				echo "</tr>";
+				echo "<tr>";
+				echo "<td colspan=5><textarea name='content' cols='10' rows='10' style='width:550px;'>".$row['content']."</textarea></td>";
+				echo "</tr>";
+				echo "<tr><td><input type='submit' name='editsub' value='delete'></td><td><input type='reset' value='clear'></td></tr>";
+				echo "<script type='text/javascript'>";
+				echo "function checkpost(){
+				if (document.formedit.title.value=='') {
+					alert('title not null');
+					document.formedit.tittle.focus();
+					return false;
+				};
+				if (document.foredit.contentt.value=='') {
+					alert('conttentt not null');
+					document.formedit.conttentt.focus();
+					return false;
+				};
+				if (document.formedit.image.value==''){
+					alert('imagess not null');
+					document.formedit.image.focus();
+					return false;
+				}
+				var str=document.formedit.image.value;
+				var ext=str.substring(str.length,str.length-3);
+				if (ext != 'gif'){
+				if (ext != 'PNG'){
+				if (ext != 'jpg'){
+					alert('Upload file not images');
+					document.formedit.image.focus();
+					return false;
+						}
+					}
+				}
+				return true;
+				}";
+				echo "</script>";
+				}
+			
+			}
+		}
+	}
 	function userselect()
 	{
 		$sql = "SELECT * FROM `user`";
@@ -181,6 +236,29 @@
 				echo "<td><input type='text' name='idrole' style='width:50px;'name='title' value='".$row['idrole']."'></td>";
 				echo "</tr>";
 				echo "<tr><td><input type='submit' name='editsub' value='Edit'></td><td><input type='reset' value='clear'></td></tr>";
+				}
+			
+			}
+		}
+	}
+	function deleteselectid()
+	{
+		$edit = $_REQUEST['selectid'];
+		$sql= "SELECT * FROM `user` WHERE `iduser`='".$edit."'";
+		if(isset($_POST['editad']))
+		{
+			if($query=mysql_query($sql)){
+				while ($row=mysql_fetch_array($query)) {
+				echo "<tr style='text-align:center;'>";
+				echo "<td><select name='iduser'><option value='".$row['iduser']."'>".$row['iduser']."</option></select></td>";
+				echo "<td><input type='text' name='username' style='width:100px;' name='title' value='".$row['username']."'></td>";
+				echo "<td><input type='text' name='password' style='width:50px;'name='title' value='".$row['password']."'></td>";
+				echo "<td><input type='text' name='email' style='width:200px;'name='title' value='".$row['email']."'></td>";
+				echo "<td><input type='text' name='firstname' style='width:50px;'name='title' value='".$row['firstname']."'></td>";
+				echo "<td><input type='text' name='lastname' style='width:50px;'name='title' value='".$row['lastname']."'></td>";
+				echo "<td><input type='text' name='idrole' style='width:50px;'name='title' value='".$row['idrole']."'></td>";
+				echo "</tr>";
+				echo "<tr><td><input type='submit' name='editsub' value='Delete'></td><td><input type='reset' value='clear'></td></tr>";
 				}
 			
 			}
